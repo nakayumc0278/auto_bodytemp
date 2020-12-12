@@ -160,6 +160,7 @@ os.rename("./a.png", "{0:%Y%m%d_%H%M%S}.png".format(dt_now))  # 時刻にリネ�
 os.remove("temp.png")  # 一時ファイルを削除
 ```
 正常に送れるとこのような画像ができあがりました。
+
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/256a2e2e-a83d-3851-d38a-d35bbbb02b32.png)
 
 ## タイムスケジューラで7時～8時までにランダムで起動
@@ -167,9 +168,11 @@ os.remove("temp.png")  # 一時ファイルを削除
 プログラムも正常に動いたら、いよいよタイムスケジューラで自動的に起動して送信してもらいます。
 
 [Win]+[R]を押して「control schedtasks」と入力を押して、[OK]を押します。
+
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/e5e4175a-5b25-a842-ad13-22051c652543.png)
 
 起動できたら左側の「タスクスケジューラライブラリ」に移動して、右の「基本タスク作成」をクリックします。
+
 ![10キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/bfc03550-2ea6-fa3c-6a0d-2c4c2378870a.png)
 
 基本タスクの作成画面が出たら、適当に名前をつけてください。
