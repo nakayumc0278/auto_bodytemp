@@ -13,9 +13,6 @@ __(ちゃんと検温はしています)__
 
 なので朝7時くらいに、__高すぎない普通の体温__で指定のフォームに自動で入力して送信してくれるプログラムを作りました。
 
-[![動作イメージ](http://img.youtube.com/vi/n19xj5M2w2E/mqdefault.jpg)](https://www.youtube.com/watch?v=n19xj5M2w2E "Selenium")
-↑押すと動作イメージの動画が見れます
-
 ## この記事の概要
 * Windows で動作させる。
 * Anaconda3 の pipを用いてライブラリのインストールをする。
@@ -176,21 +173,27 @@ os.remove("temp.png")  # 一時ファイルを削除
 ![10キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/bfc03550-2ea6-fa3c-6a0d-2c4c2378870a.png)
 
 基本タスクの作成画面が出たら、適当に名前をつけてください。
+
 ![キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/f8f76401-98b9-a67f-08f4-fbd50b948a35.png)
 
 毎日送るので、[毎日(D)] にします。
+
 ![1キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/f7a1c48f-28d3-0b3c-8637-f6794277cc66.png)
 
 これは何もいじらず次へ
+
 ![2キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/cde0ae78-e60b-e5bf-a04c-0e99f279fcf7.png)
 
 これも次へ
+
 ![3キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/dca4fed6-8923-9d56-4634-99ddb9ade027.png)
 
 これは、PATHが通っていれば[python.exe]です。通っていない方は、pythonの場所を指定してください。
+
 ![4キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/2ca3e0a0-6deb-1461-0642-c5c40b3dcc76.png)
 
 今回私は Desktop に体温というフォルダーを作り、その中に実行プログラムが置いてあります。
+
 ![a.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/bcbcbe8a-520c-87ba-a5ba-bb676bc84b5f.png)
 
 なので、引数と開始は
@@ -214,9 +217,11 @@ __[完了]をクリックしたときに、このタスクの[プロパティ]�
 ![5キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/0bc43375-7d91-4143-71cb-66909538c7ad.png)
 
 するとこの画面が出てきます。
+
 ![6キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/664f5e22-f54f-8fd3-34fb-71ec0228abe7.png)
 
 [トリガー]タブに移動して、編集(E)をクリックします。
+
 ![7キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/cb373d02-a2a1-97f8-a5c5-27f4ec00d365.png)
 
 設定項目ですが、
@@ -228,6 +233,7 @@ __[完了]をクリックしたときに、このタスクの[プロパティ]�
 * [有効] にチェックを入れないと詳細設定が動きません。
 
 すべてできたらOKを押します。
+
 ![8キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/857c3a2a-0986-9935-e2fb-5a447f1983a1.png)
 
 次は、[設定] タブに移動して、これらを設定してください。
@@ -239,8 +245,10 @@ __[完了]をクリックしたときに、このタスクの[プロパティ]�
 * 要求時に実行中のタスクが終了しない場合、タスクを強制的に停止する
 
 これらが設定が出来たら終了です！　[完了]をクリックしてください。
+
 ![9キャプチャ.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/533305c2-2287-aced-9043-ed981a01762a.png)
 
 いよいよタスクを実行します！
 新しく出来たタスクを右クリックして[実行する]をクリックしたら動作することを確認してください。
+
 ![11無題.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/c3d3d0df-9792-db92-50fc-f5dfb18dc921.png)
