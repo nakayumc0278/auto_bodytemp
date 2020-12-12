@@ -52,9 +52,11 @@ pip install selenium
 ## chromeバージョン更新と確認
 
 なるべく更新してほしいのですが、[chrome://settings/help](chrome://settings/help) で確認してください。
+
 ![無題.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/a1ca1937-8959-3972-200b-713fb951ce2e.png)
 
 更新したくない場合[chrome://version](chrome://version/)で確認できます。
+
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/6a475aa7-9df3-230f-8591-fd8e0cc61b6c.png)
 
 今回の私の環境でのバージョンは「87.0.4280.66」でした。
@@ -66,13 +68,16 @@ pip install chromedriver-binary==87.0.4280.66
 ```
 
 するとこんなエラーが出ました。
+
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/0b7bb048-946b-5516-1a4a-34c4164057ae.png)
+
 そんなバージョンなんてないぞ と怒られてしまいました。
 
 なのでこの赤文字の中から青線で囲った一番最新のバージョンを指定します。
 __更新していない方はそのバージョンに一番近いものを選んでください。__
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/545468/fc817bfe-69dd-0b3a-4e95-85c2c7f32442.png)
+
 インストールできたら環境構築完了です。
 
 ##Seleniumを使ってフォームを送信させる
