@@ -11,12 +11,11 @@ import os
 import requests
 import socket
 
-
 # 体温を36.1~36.7の中からランダムで選ぶ
 body_temp = str(36 + random.randint(0, 7)/10)
 
 # 送信したいフォームのURLを指定
-url = "ここにURLを指定する"
+url = 'https://docs.google.com/forms/hogehogehogehoge/viewform?entry.xxxxxxxxx=' + body_temp
 
 driver = webdriver.Chrome()
 driver.implicitly_wait(5)
@@ -55,8 +54,6 @@ submit.click()
 driver.save_screenshot('temp.png')
 
 # 画像に文字を入れる関数
-
-
 def img_add_msg(img, message):
     font_path = 'C:\Windows\Fonts\meiryo.ttc'  # Windowsのフォントファイルへのパス
     font_size = 24  # フォントサイズ
@@ -67,18 +64,12 @@ def img_add_msg(img, message):
     draw.text((50, 400), message, font=font, fill=(0, 0, 0, 0))
     # PIL型の画像をcv2(NumPy)型に変換
     img = np.array(img)
-    return img                                          # 文字入りの画像をリターン
-
+    return img  # 文字入りの画像をリターン
 
 dt_now = datetime.datetime.now()  # 時刻取得
 img2 = cv2.imread('temp.png', 1)  # 画像読み込み
-cr = '\n'
-mail = 'メール: '
-char1 = '送信時間: '
-char2 = ' ℃で送信しました。'
-message = cr + mail + login_id + cr + char1 + \
-    dt_now.strftime('%Y年%m月%d日 %H:%M:%S\n') + (body_temp) + char2  # 画像に入れる文章
-# message = char1 + dt_now.strftime('%Y年%m月%d日 %H:%M:%S\n') + (body_temp) + char2      #画像に入れる文章
+message = '\n' + 'メール: ' + login_id + '\n' + '送信時間: ' + \
+    dt_now.strftime('%Y年%m月%d日 %H:%M:%S\n') + (body_temp) + '℃で送信しました。'  # 画像に入れる文章
 img = img_add_msg(img2, message)  # img_add_msgを実行
 
 cv2.imwrite(('./a.png'), img)  # 画像書き込み
@@ -88,15 +79,12 @@ cv2.destroyAllWindows()
 os.rename('./a.png', '{0:%Y%m%d_%H%M%S}.png'.format(dt_now))  # 時刻にリネーム
 os.remove('temp.png')  # 一時ファイルを削除
 
-
-# IPアドレスを取得
+# ホスト名を取得
 host = 'ホスト: ' + socket.gethostname()
-
 # LINEに送信
 url = "https://notify-api.line.me/api/notify"
-api_token = "取得したトークンをここにいれる"
+api_token = "APIトークン"
 headers = {'Authorization': 'Bearer ' + api_token}
-
 image = '{0:%Y%m%d_%H%M%S}.png'.format(dt_now)
 payload = {'message': host + message}
 files = {'imageFile': open(image, 'rb')}
